@@ -1,0 +1,19 @@
+import java.io.IOException;
+import java.sql.SQLException;
+
+public interface Negociacao {
+	public float getPlafond(int userLogin);
+	public void abrirNewCompra (String nome, float montante, float ll, float lp, int userLogin) throws SQLException, IOException;
+	public void abrirOldCompra (String nome, float montante, float ll, float lp, int userLogin) throws SQLException, IOException;
+	public void abrirCompra(String nome, float montante, float ll, float lp, int userLogin);
+	public void abrirNewVenda (String nome, float montante, float ll, float lp, int userLogin) throws SQLException, IOException;
+	public void abrirOldVenda (String nome, float montante, float ll, float lp, int userLogin) throws SQLException, IOException;
+	public void abrirVenda(String nome, float montante, float ll, float lp, int userLogin);
+	public void fechaCompra(int idAtivo, int userLogin);
+	public void fechaVenda(int idAtivo, int userLogin);
+	public void addFundos(float fundos, int userLogin);
+	public float getPlafondInvestido(int userLogin);
+	public float getPlafondInvestidoModalidade(int userLogin, String modalidade);
+	public void updateCompra(int userLogin) throws SQLException, IOException;
+	public void updateVenda(int userLogin) throws SQLException, IOException;
+}

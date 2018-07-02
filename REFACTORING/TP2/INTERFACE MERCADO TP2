@@ -1,0 +1,15 @@
+import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public interface Mercado {
+	public void addNewAtivo(String nome, int userLogin) throws SQLException, IOException;
+	public void addOldAtivo(String nome, int userLogin) throws SQLException, IOException;
+	public void addAtivo(String nome, int userLogin);
+	public void removeAtivo(int id, int userLogin);
+	public ResultSet getPortfolio(int userLogin);
+	public ResultSet getAtivosCompra(int userLogin);
+	public ResultSet getAtivosVenda(int userLogin);
+	public void addAlerta(String codigo, String modalidade, float valor, int userLogin);
+	
+}
